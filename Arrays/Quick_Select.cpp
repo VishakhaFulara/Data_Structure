@@ -27,7 +27,6 @@ int Smallest(int *a,int start,int end,int k){
         }
         return INT_MAX;
 }
-
 int main(){
 	int n,k;
 	cout<<"enter size:";
