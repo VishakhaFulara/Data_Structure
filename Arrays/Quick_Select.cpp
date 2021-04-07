@@ -15,13 +15,17 @@ int Partition(int *a,int start,int end){
 	
 }
 int Smallest(int *a,int start,int end,int k){
-	if(start<=end){
-		int Pindex=Partition(a,start,end);					//calling partition
-		if(Pindex+1==k){
-			return a[Pindex];
-		}
-		Smallest(a,start,Pindex-1,k);
-	}
+	if(k>0 && k<=r-l+1){
+        	int pindex=RandomPartition(arr,l,r);
+        
+        	if(pindex-l==k-1)
+            		return arr[pindex];
+       		 if(pindex-l>k-1)
+            		return kthSmallest(arr,l,pindex-1,k);
+       		 else
+           	 	return kthSmallest(arr,pindex+1,r,k-1-pindex+l);
+        }
+        return INT_MAX;
 }
 
 int main(){
