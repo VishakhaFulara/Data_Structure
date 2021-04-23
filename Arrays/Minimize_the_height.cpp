@@ -1,4 +1,4 @@
-// Initial template for C++
+//minimize the difference of height of shortest & longest tower
 
 #include <bits/stdc++.h>
 using namespace std;
