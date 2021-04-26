@@ -1,3 +1,4 @@
+//function to rotate the array
 void rotation_of_array(int *a,int n,int d){
 	int b[100000],j=0,i;
 	for(i=d;i<n;i++){
