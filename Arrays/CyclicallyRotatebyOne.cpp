@@ -1,4 +1,4 @@
-//Initial Template for C++
+//to cyclically rotate the array by one
 
 #include <stdio.h>
 
@@ -22,10 +22,7 @@ int main()
     }
         return 0;
 }
-// } Driver Code Ends
 
-
-//User function Template for C++
 
 void rotate(int arr[], int n)
 {
