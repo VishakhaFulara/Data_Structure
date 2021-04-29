@@ -1,27 +1,47 @@
-class Solution {
-public:
-    int findDuplicate(vector<int>& nums) {
-     /*
-     int len=nums.size();
-        for(int i=0;i<len;i++){
-            for(int j=i+1;j<len;j++){
-                if(nums[i]==nums[j])
-                    return nums[i];
+//Given an array a[] of size N which contains elements from 0 to N-1, you need to find all the elements occurring more than 
+//once in the given array.
+#include <bits/stdc++.h>
+using namespace std;
+
+
+class Solution{
+  public:
+    vector<int> duplicates(int arr[], int n) {
+ 
+        vector<int>vec;
+        int index;
+        for(int i=0;i<n;i++){
+            index=arr[i]%n;
+            arr[index]+=n;
+        }
+        for(int i=0;i<n;i++){
+            if((arr[i]/n)>=2){
+                vec.push_back(i);
             }
         }
-        return -1;*/
-      //time -O(n),space -0(n)  
-        set<int>s;
-        int len=nums.size();
-        set<int>::iterator itr;
-        for(int i=0;i<len;i++){
-            itr=s.find(nums[i]);
-            if(itr==s.end()){
-                s.insert(nums[i]);
-            }
-            else
-                return nums[i];
+            
+        if(vec.empty()){
+            return {-1};
         }
-        return -1;
+        return vec;
     }
 };
+
+
+
+int main() {
+    int t;
+    cin >> t;
+    while (t-- > 0) {
+        int n;
+        cin >> n;
+        int a[n];
+        for (int i = 0; i < n; i++) cin >> a[i];
+        Solution obj;
+        vector<int> ans = obj.duplicates(a, n);
+        for (int i : ans) cout << i << ' ';
+        cout << endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
