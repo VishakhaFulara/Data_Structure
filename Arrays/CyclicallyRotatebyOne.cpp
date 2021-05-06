@@ -1,4 +1,4 @@
-
+//To cycially rotate the array by one
 
 #include <stdio.h>
 
