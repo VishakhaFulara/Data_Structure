@@ -14,6 +14,8 @@ node* newnode(int k)
 	temp->left=temp->right=NULL;
 	return temp;
 }
+
+//inserting the node
 node* insert(node* root,int k)
 {
 	if(root==NULL)
