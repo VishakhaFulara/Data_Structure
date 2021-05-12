@@ -17,6 +17,7 @@ void push(int ele){
 	top=temp;	
 }
 
+//pop operation to remove the data
 void pop(){
 	struct node *temp;
 	if(top==NULL) return ;
