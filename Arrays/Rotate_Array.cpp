@@ -1,29 +1,36 @@
 //function to rotate the array
-void rotation_of_array(int *a,int n,int d){
-	int b[100000],j=0,i;
-	for(i=d;i<n;i++){
-		b[j]=a[i];
-		j++;
-	}
-	for(i=0;i<d;i++){
-		b[j]=a[i];
-		j++;
-   	}
-   	j=0;
-   	for(i=0;i<n;i++){
-		printf("%d ",b[i]);
-	}
-	printf("\n");
-}
+#include<iostream>
+#include<vector>
+using namespace std;
+ void reverse(vector<int>& nums,int low,int high)
+  {
+        while(low<high && low>=0)
+        {
+            swap(nums[low],nums[high]);
+            low++;
+            high--;
+        }
+        
+  }
+  void rotate(vector<int>& nums, int k) {
+        int n=nums.size();
+        reverse(nums,0,n-(k%n)-1);
+        reverse(nums,n-(k%n),n-1);
+        reverse(nums,0,n-1);
+ }
 int main(){
-	int a[100000],t=0,k,i,n,d;
-	scanf("%d",&t);
-	for(k=0;k<t;k++)
+	int n;
+	vector<int>nums(n);
+	for(int i=0;i<n;i++)
 	{
-		scanf("%d %d",&n,&d);
-		for(i=0;i<n;i++)
-		scanf("%d",&a[i]);
-		rotation_of_array(a,n,d);
-    }
+		cin>>nums[i];
+	}
+	int k;
+	cin>>k;
+	rotate(nums,k);
+	for(int i=0;i<n;i++)
+	{
+		cout<<nums[i];
+	}
 	return 0;
 }
